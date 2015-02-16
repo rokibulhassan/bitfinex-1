@@ -85,6 +85,12 @@ class Bitfinex
   end
 
   # --------------- authenticated -----------------
+  def pubticker
+    return nil unless have_key?
+    url = "/v1/pubticker/BTCUSD"
+    self.class.get(url, :headers => headers_for(url)).parsed_response
+  end
+
   def orders
     return nil unless have_key?
     url = "/v1/orders"
