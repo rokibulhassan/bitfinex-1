@@ -355,7 +355,7 @@ class Bitfinex
     return nil unless have_key?
     url = "/v1/order/new"
 
-    oh = {type:'limit', sym:'btcusd', routing:'all', side:'buy'}.merge(opts)
+    oh = {type:'exchange limit', sym:'btcusd', routing:'all', side:'buy'}.merge(opts)
     puts "order(): oh:#{oh}" if @debug
     #byebug
     # using negative amounts as shorthand for a sell
